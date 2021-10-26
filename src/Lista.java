@@ -38,6 +38,16 @@ public class Lista{
             }
         }
     }
+    
+    public No removePrimeiro(){
+        if(inicio == null){
+            return null;
+        }
+        int info = inicio.getInfo();
+        inicio = inicio.getProx();
+        tamanho --;
+        return null;
+    }
 
     public void mostrar(){
         No auxiliar = primeiro;
