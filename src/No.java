@@ -1,15 +1,15 @@
 package unidade04.src;
 
 public class No {
-    private Integer informacao;
+   private int informacao;
     private No proximo;
 
     public No(){
-        informacao = null;
+        informacao = 0;
         proximo = null;
     }
 
-    public void setInfo(Integer informacao){
+    public void setInfo(int informacao){
         this.informacao = informacao;
     }
 
@@ -21,7 +21,7 @@ public class No {
         return this.proximo;
     }
 
-    public Integer getInfo(){
+    public int getInfo(){
         return this.informacao;
     }
 }
