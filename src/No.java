@@ -2,11 +2,13 @@ package unidade04.src;
 
 public class No {
    private int informacao;
-    private No proximo;
+    private No proximo,anterior;
+
 
     public No(){
         informacao = 0;
         proximo = null;
+        anterior = null;
     }
 
     public void setInfo(int informacao){
@@ -24,4 +26,14 @@ public class No {
     public int getInfo(){
         return this.informacao;
     }
+
+    public No getAnt() {
+        return anterior;
+    
+    }
+
+    public void setAnt(No anterior){
+        this.anterior = anterior;
+    }
+
 }
