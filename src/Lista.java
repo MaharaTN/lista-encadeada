@@ -33,8 +33,9 @@ public class Lista{
             }
             No novo = new No();
             novo.setInfo(info);
-            novo.setProx(novo);
-            local.setProx(novo);
+            local.setAnt(novo);
+            novo.setProx(local);
+            local = novo;
             tamanho ++;
         }
     }
@@ -90,7 +91,6 @@ public class Lista{
 
     /*public No remove(int no){
         if(no < 0 || no >= tamanho || inicio == null ){
-
         }
     }*/
 
