@@ -20,6 +20,23 @@ public class Lista{
         primeiro = auxiliar;
     }
     
+    public void insereDepois(int indice, int info){
+        if(indice <= 0){
+            inserePrimeiro(info);
+        }else if(indice >= tamanho){
+            insereUltimo(info);
+        }else{
+            No local = inicio;
+            for(int i = 0; i < indice; i ++){
+                local = local.getProx();
+            }
+            No no = new No();
+            no.setInfo(info);
+            local.setProx(no);
+            tamanho ++;
+        }
+    }
+    
     public void insereUltimo(int info){
         if(vazia() == true){
             inserePrimeiro(info);
