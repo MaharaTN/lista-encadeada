@@ -2,11 +2,11 @@ package unidade04.src;
 
 public class Lista{
 
-    private No primeiro;
-    
+    private No inicio;
+    private int tamanho = 0;
     
     public Lista(){
-        primeiro = null;
+        inicio = null;
     }
     
     public boolean vazia(){
@@ -28,11 +28,12 @@ public class Lista{
             insereUltimo(info);
         }else{
             No local = inicio;
-            for(int i = 0; i <= indice; i ++){
+            for(int i = 0; i < indice -1; i ++){
                 local = local.getProx();
             }
             No novo = new No();
             novo.setInfo(info);
+            novo.setProx(novo);
             local.setProx(novo);
             tamanho ++;
         }
@@ -87,10 +88,19 @@ public class Lista{
         return null;
     }
 
+    /*public No remove(int no){
+        if(no < 0 || no >= tamanho || inicio == null ){
+
+        }
+    }*/
+
+
     public void mostrar(){
-        No auxiliar = primeiro;
+        No auxiliar = inicio;
+        System.out.println("------ LISTA --------\n");
         while(auxiliar != null){
-            System.out.print(auxiliar.getInfo() + ", ");
+            
+            System.out.print(auxiliar.getInfo() + "\n");
             auxiliar = auxiliar.getProx();
         }
     }
