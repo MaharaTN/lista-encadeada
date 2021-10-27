@@ -94,7 +94,6 @@ public class Lista{
         }
     }*/
 
-
     public void mostrar(){
         No auxiliar = inicio;
         System.out.println("------ LISTA --------\n");
