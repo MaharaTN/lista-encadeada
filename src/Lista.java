@@ -10,16 +10,17 @@ public class Lista{
     }
     
     public boolean vazia(){
-        return primeiro == null;
+        return inicio == null;
     }
     
     public void inserePrimeiro(int info){
         No auxiliar = new No();
         auxiliar.setInfo(info);
-        auxiliar.setProx(primeiro);
-        primeiro = auxiliar;
+        auxiliar.setProx(inicio);
+        inicio = auxiliar;
+        tamanho ++;
     }
-    
+
     public void insereDepois(int indice, int info){
         if(indice <= 0){
             inserePrimeiro(info);
@@ -27,12 +28,12 @@ public class Lista{
             insereUltimo(info);
         }else{
             No local = inicio;
-            for(int i = 0; i < indice; i ++){
+            for(int i = 0; i <= indice; i ++){
                 local = local.getProx();
             }
-            No no = new No();
-            no.setInfo(info);
-            local.setProx(no);
+            No novo = new No();
+            novo.setInfo(info);
+            local.setProx(novo);
             tamanho ++;
         }
     }
@@ -42,7 +43,7 @@ public class Lista{
             inserePrimeiro(info);
         }
         else{
-            No auxiliar = primeiro;
+            No auxiliar = inicio;
 
             while(auxiliar != null && auxiliar.getProx() != null){
                 auxiliar = auxiliar.getProx();
@@ -54,14 +55,34 @@ public class Lista{
                 auxiliar.setProx(novo);
             }
         }
+        tamanho ++;
     }
-    
+
     public No removePrimeiro(){
-        if(inicio == null){
+        if(vazia() == true){
             return null;
         }
         int info = inicio.getInfo();
         inicio = inicio.getProx();
+        tamanho --;
+        return null;
+    }
+
+    public No removeUltimo(){
+        if(vazia()== true){
+            return null;
+        }
+        No local = inicio;
+        while(local.getProx() != null){
+            No aux = local;
+            local = local.getProx();
+            if(local.getProx() == null){
+                aux.setProx(null);            
+                tamanho --;
+                return null;   
+            }
+        }
+        inicio = null;
         tamanho --;
         return null;
     }
