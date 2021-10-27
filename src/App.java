@@ -10,14 +10,26 @@ public class App {
 
 
         Lista l = new Lista();
-        l.insereUltimo(10);
-        l.insereUltimo(20);
-        l.insereUltimo(30);
+        
+      /*System.out.println("vazia: " + l.vazia());*/
+        
+      l.insereUltimo(10);
+      l.insereUltimo(20);        
+      l.insereUltimo(30);
+      l.inserePrimeiro(50);        
+      l.inserePrimeiro(5); 
+      l.inserePrimeiro(999999);       
+      l.mostrar();
+        /*l.removeUltimo();
+        l.mostrar();*/
+        /*l.removePrimeiro();
+        System.out.println("\n******************************");
+        l.mostrar();*/
 
-        l.inserePrimeiro(50);
-
-        l.insereUltimo(5);
-
-        l.mostrar();
+      System.out.println("\n******************************");
+      l.insereUltimo(9);
+      l.insereDepois(2, 111111);
+      l.insereUltimo(555);
+      l.mostrar();
     }
 }
